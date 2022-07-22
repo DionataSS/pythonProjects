@@ -1,0 +1,83 @@
+##Solicita um número, mostra se é par ou ímpar, programa continua ou 0 para sair
+
+numero = 1
+while numero != 0:
+ numero = int(input("Digite um número inteiro:"))
+ if (numero % 2) == 0:
+  print("O número", numero, "é PAR! Digite outro número ou 0 para sair.")
+ else:
+  print("O número", numero, "é ÍMPAR! Digite outro número ou 0 para sair.")
+
+
+##Solicita três números, coloca em ordem crescente, opção para sair
+
+numero1 = 1
+while numero1 != 0:
+    numero1 = int(input("Digite um número inteiro ou zero para sair:"))
+    if numero1 == 0:
+        print("FIM")
+    else:
+        numero2 = int(input("Digite o segundo número:"))
+        numero3 = int(input("Digite o terceiro número que vou por em ordem crescente:"))
+        if numero1 <= numero2 and numero1 <= numero3:
+            if numero2 <= numero3:
+                print("Ordem crescente: {}, {}, {}".format(numero1, numero2, numero3))
+            else:
+                print("Ordem crescente: {}, {}, {}".format(numero1, numero3, numero2))
+        elif numero2 <= numero1 and numero2 <= numero3:
+            if numero1 <= numero3:
+                print("Ordem crescente: {}, {}, {}".format(numero2, numero1, numero3))
+            else:
+                print("Ordem crescente: {}, {}, {}".format(numero2, numero3, numero1))
+        else:
+            if numero1 <= numero2:
+                print("Ordem crescente: {}, {}, {}".format(numero3, numero1, numero2))
+            else:
+                print("Ordem crescente: {}, {}, {}".format(numero3, numero2, numero1))
+
+
+##Solicita três números, mostra o maior
+
+numero1 = int(input("Digite o primeiro número:"))
+numero2 = int(input("Digite o segundo número:"))
+numero3 = int(input("Digite o terceiro número, vou mostrar qual é o maior:"))
+if numero1 <= numero3 and numero2 <= numero3:
+    print("O maior número é o:", numero3)
+if numero3 <= numero1 and numero2 <= numero1:
+    print("O maior número é o:", numero1)
+if numero1 <= numero2 and numero3 <= numero2:
+    print("O maior número é o:", numero2)
+
+
+##Calcula média entre um conjunto de números
+
+import statistics
+lista = list(range(6, 10))
+for i in range(1):
+    print("A média entre os números da lista é de: ", statistics.mean(lista))
+
+
+##Usa dois vetores e calcula o produto escalar entre eles
+
+def produto_escalar(u, v):
+    soma = 0
+    for i in range(len(u)):
+        soma = soma + u[i] * v[i]
+    return soma
+
+
+vetor1 = [0.1, 0.2, 0.4, 0.5, 0.6]
+vetor2 = [0.2, 0.1, 0.4, 0.7, 0.8]
+x = produto_escalar(vetor1, vetor2)
+print("O produto escalar entre o vetor1 e o vetor2 é de:", x)
+
+
+##Solicita um número e calcula seu fatorial
+
+num = int(input("Digite um número para calcular seu fatorial:"))
+calculo = 1
+count = 1
+while count <= num:
+    calculo *= count
+    count += 1
+print("O fatorial de", num, "é:", calculo)
